@@ -44,15 +44,9 @@
       public function store(Request $request)
       {
       $simpan =$this->repo->create($request);
-      // $simpan->name=$request->merk_kenderaan;
-      // $simpan->addres=$request->warna_kenderaan;
-      // $simpan->gender=$request->stok_kendaraan;
-      // $simpan->ages=$request->tahun_produksi;
-
       return response()->json([
         'status'=>'success',
         'Database'=>$simpan->toArray(),
       ]);
-
       }
   }

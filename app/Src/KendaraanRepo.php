@@ -22,7 +22,7 @@
     }
     public function create(Request $request){
       $value = $request->all();
-      return ModelKendaraan::create($value);
+      return $this->model->create($value);
     }
     public function destroy($id)
     {
