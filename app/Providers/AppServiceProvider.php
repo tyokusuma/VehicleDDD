@@ -25,6 +25,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(KendaraanRepo::class, ModelKendaraan::class);
+        $this->app->bind('App\Src\Contract\KendaraanRepoInterface', 'App\Src\KendaraanRepo');
+        $this->app->bind('App\Src\Contract\MemberRepoInterface', 'App\Src\MemberRepo');
+        $this->app->bind('App\Src\Contract\TransactionRepoInterface', 'App\Src\TransactionRepo');
     }
 }

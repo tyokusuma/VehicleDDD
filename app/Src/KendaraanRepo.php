@@ -15,12 +15,16 @@
     public function getAll(){
       return $this->model->all();
     }
-    public function create(array $attributes){
-      return $this->model->create($attributes);
-    }
-    public function delete($id)
+    public function getById($id)
     {
-      $this->getById($id)->delete();
+      return $this->model->find($id);
+    }
+    public function create(){
+      return $this->model->create();
+    }
+    public function destroy($id)
+    {
+      $this->find($id)->delete();
       return true;
     }
     public function update($id, array $attributes)

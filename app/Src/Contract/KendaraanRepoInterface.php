@@ -4,8 +4,9 @@
 
   interface KendaraanRepoInterface {
     public function getAll();
-    public function create(array $attributes);
-    public function delete($id);
+    public function getById($id);
+    public function create();
+    public function destroy($id);
     public function update($id, array $attributes);
   }
  ?>

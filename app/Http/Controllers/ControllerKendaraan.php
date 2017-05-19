@@ -9,7 +9,7 @@ use App\ModelKendaraan;
 class ControllerKendaraan extends Controller
 {
   // public $kelasKendaraan;
-    public function __construct(KendaraanRepo $kelasKendaraan)
+    public function __construct(ServiceKendaraan $kelasKendaraan)
     {
         $this->kelasKendaraan = $kelasKendaraan;
     }
