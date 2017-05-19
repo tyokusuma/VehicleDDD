@@ -21,13 +21,14 @@
           'DATABASE'=>$result->toArray(),
         ]);
       }
-      public function byId($id)
+      public function show($id)
       {
-        $find = $this->repo->getById($id);
+        $find = $this->repo;
+        $find->getById($id);
 
         return response()->json([
           'status'=>'success',
-          'DATABASE'=>$find->toArray(),
+          'DATABASE'=>$find,
         ]);
       }
       public function destroy($id)
@@ -42,16 +43,15 @@
       }
       public function store(Request $request)
       {
-      $simpan =$this->repo;
-      $simpan->name=$request->merk_kenderaan;
-      $simpan->addres=$request->warna_kenderaan;
-      $simpan->gender=$request->stok_kendaraan;
-      $simpan->ages=$request->tahun_produksi;
-      $simpan->create();
+      $simpan =$this->repo->create($request);
+      // $simpan->name=$request->merk_kenderaan;
+      // $simpan->addres=$request->warna_kenderaan;
+      // $simpan->gender=$request->stok_kendaraan;
+      // $simpan->ages=$request->tahun_produksi;
 
       return response()->json([
         'status'=>'success',
-        'Database'=>$simpan
+        'Database'=>$simpan->toArray(),
       ]);
 
       }

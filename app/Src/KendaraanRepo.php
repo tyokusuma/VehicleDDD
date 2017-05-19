@@ -4,6 +4,7 @@
 
   use App\Src\Contract\KendaraanRepoInterface;
   use App\ModelKendaraan;
+  use Illuminate\Http\Request;
 
   class KendaraanRepo implements KendaraanRepoInterface
   {
@@ -19,8 +20,9 @@
     {
       return $this->model->find($id);
     }
-    public function create(){
-      return $this->model->create();
+    public function create(Request $request){
+      $value = $request->all();
+      return ModelKendaraan::create($value);
     }
     public function destroy($id)
     {
