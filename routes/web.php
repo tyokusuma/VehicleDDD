@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/belajar','ControllerKendaraan');
+// Route::resource('/belajar','ControllerKendaraan');
