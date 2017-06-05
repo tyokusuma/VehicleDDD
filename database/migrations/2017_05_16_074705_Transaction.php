@@ -17,7 +17,7 @@ class Transaction extends Migration
         $table->increments('id');
         $table->string('nama_pembeli');
         $table->string('jenis_produk');
-        $table->integer('jumlah');
+        $table->integer('member_id');
         $table->timestamps();
         });
     }

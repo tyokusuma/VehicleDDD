@@ -19,6 +19,7 @@ class Kendaraan extends Migration
        $table->string('warna_kenderaan');
        $table->integer('stok_kendaraan');
        $table->integer('tahun_produksi');
+       $table->integer('category_id');
        $table->timestamps();
        });
      }
